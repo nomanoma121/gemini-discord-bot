@@ -22,7 +22,7 @@ client.on("messageCreate", async (message) => {
   };
 
   if (message.author.bot) return;
-  if (message.mentions.has(client.user)) {
+  if (client.user && message.mentions.has(client.user)) {
     // 返信の場合は参照元を取得
     let referencedMessage = null;
     if (message.reference) {
